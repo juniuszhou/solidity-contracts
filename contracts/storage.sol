@@ -25,4 +25,17 @@ contract Storage {
     function retrieve() public view returns (uint256) {
         return number;
     }
+
+    function loop() public pure {
+        uint256 x = 0;
+        assembly {
+            for {
+                let i := 0
+            } lt(i, 0x100) {
+                i := add(i, 0x20)
+            } {
+                x := add(x, mload(i))
+            }
+        }
+    }
 }

@@ -4,6 +4,7 @@ pragma solidity >=0.8.2 <0.9.0;
 contract UUPSProxy {
     address public implementation;
     address public admin;
+    uint256 public value;
 
     constructor(address _implementation) {
         implementation = _implementation;

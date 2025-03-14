@@ -4,6 +4,7 @@ pragma solidity >=0.8.2 <0.9.0;
 contract TransparentProxy {
     address public implementation;
     address public admin;
+    uint256 public value;
 
     constructor(address _implementation) {
         implementation = _implementation;
@@ -19,19 +20,18 @@ contract TransparentProxy {
         implementation = _newImplementation;
     }
 
+    receive() external payable {}
+
     // In Solidity, the fallback() function is a special function that is executed under specific conditions
     // when a contract receives a call that does not match any of its existing functions.
     fallback() external payable {
-        (bool success, bytes memory data) = implementation.delegatecall(
-            msg.data
-        );
+        (bool success, ) = implementation.delegatecall(msg.data);
         require(success, "Delegatecall failed");
     }
 }
 
 contract Implementation {
     uint256 public value;
-
     function setValue(uint256 _value) public {
         value = _value;
     }

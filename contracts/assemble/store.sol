@@ -30,4 +30,15 @@ contract AssemblyExample {
         }
         return result;
     }
+
+    function storeMemory() public pure returns (uint) {
+        uint result;
+        assembly {
+            let ptr := mload(0x40) // Load free memory pointer (e.g., 0x80)
+            mstore(ptr, 42) // Store 42 at ptr (0x80)
+            mstore(0x40, add(ptr, 32)) // Update free memory pointer
+            result := mload(ptr) // Read it back
+        }
+        return result; // Returns 42
+    }
 }
