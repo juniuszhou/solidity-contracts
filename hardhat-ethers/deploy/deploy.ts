@@ -1,33 +1,24 @@
-// scripts/deploy.ts
-import { ethers } from "ethers";
-import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
+import { ethers } from "hardhat"
+
 
 async function main() {
-    const [deployer] = await ethers.getSigners();
-    console.log("Deploying contracts with the account:", deployer.address);
+    const Lock = await ethers.getContractFactory("Lock");
+    const initialValue = 42;
 
-    // Deploy Token contract
-    const Token = await ethers.getContractFactory("Token");
-    const token = await Token.deploy("MyToken", "MTK");
-    await token.deployed();
-    console.log("Token deployed to:", token.address);
+    const lock = await Lock.deploy(initialValue);
+    await lock.waitForDeployment();
 
-    // Deploy Marketplace contract with the token address
-    const Marketplace = await ethers.getContractFactory("Marketplace");
-    const marketplace = await Marketplace.deploy(token.address);
-    await marketplace.deployed();
-    console.log("Marketplace deployed to:", marketplace.address);
+    const contractAddress = await lock.getAddress();
 
-    // Optionally save addresses to a JSON file
-    const fs = require('fs');
-    const addresses = {
-        token: token.address,
-        marketplace: marketplace.address,
-    };
-    fs.writeFileSync('deployedAddresses.json', JSON.stringify(addresses, null, 2));
+    console.log("Lock deployed to:", contractAddress);
+
+    const tx = await lock.withdraw();
+    await tx.wait();
+    const owner = await lock.owner();
+
+    console.log(`Current owner in contract: ${owner.toString()}`);
 }
 
-// Run the deployment script
 main()
     .then(() => process.exit(0))
     .catch((error) => {
