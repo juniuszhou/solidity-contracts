@@ -1,6 +1,6 @@
-import { task } from "hardhat/config"
-import { readFileSync } from 'fs'
-import { join } from 'path'
+const { task } = require("hardhat/config");
+const { readFileSync } = require('fs');
+const { join } = require('path');
 
 task("deploy-revive", "Deploys a contract")
   .addParam("contract", "The contract name")
@@ -14,8 +14,8 @@ task("deploy-revive", "Deploys a contract")
     try {
       const abi = JSON.parse(readFileSync(join('artifacts', 'contracts', contractName, `${contractName}.json`), 'utf8'));
       const bytecode = `0x${readFileSync(join('artifacts', 'contracts', contractName, `${contractName}.polkavm`)).toString('hex')}`;
-      //   console.log('ABI:', JSON.stringify(abi));
-      //   console.log('Bytecode:', bytecode);
+    //   console.log('ABI:', JSON.stringify(abi));
+    //   console.log('Bytecode:', bytecode);
 
       // Create contract factory and deploy
       const factory = new hre.ethers.ContractFactory(abi, bytecode, deployer);
