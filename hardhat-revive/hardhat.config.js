@@ -4,6 +4,10 @@ require("@nomicfoundation/hardhat-ignition");
 require("hardhat-resolc");
 require("dotenv").config();
 
+require("./tasks/compile-revive");
+// require("./tasks/deploy-revive");
+require("./tasks/deploy.js");
+
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.19",
@@ -11,13 +15,12 @@ module.exports = {
     hardhat: {
       polkavm: true,
       nodeConfig: {
-        nodeBinaryPath:
-          "../../../code/polkadot-sdk/target/debug/substrate-node",
+        nodeBinaryPath: "../../../polkadot-sdk/target/debug/substrate-node",
         rpcPort: 8000,
         dev: true,
       },
       adapterConfig: {
-        adapterBinaryPath: "../../../code/polkadot-sdk/target/debug/eth-rpc",
+        adapterBinaryPath: "../../../polkadot-sdk/target/debug/eth-rpc",
         dev: true,
       },
     },

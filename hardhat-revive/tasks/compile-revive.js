@@ -8,6 +8,8 @@ task("compile-revive", "Compiles a contract using Revive")
   .setAction(async (taskArgs) => {
     const { contract } = taskArgs;
 
+    console.log("========= ");
+
     // Read contract source
     const source = readFileSync(`contracts/${contract}`, "utf8");
 
@@ -33,11 +35,14 @@ task("compile-revive", "Compiles a contract using Revive")
             mkdirSync(contractDir, { recursive: true });
           }
 
+          console.log("========= ");
           // Save ABI
           writeFileSync(
             join(contractDir, `${name}.json`),
             JSON.stringify(contract.abi, null, 2)
           );
+
+          console.log("========= ", join(contractDir, `${name}.polkavm`));
 
           // Save bytecode
           writeFileSync(

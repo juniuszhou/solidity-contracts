@@ -11,3 +11,17 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
+
+## tasks
+
+### compile revive
+
+```shell
+npx hardhat compile-revive --contract Storage.sol
+```
+
+### deploy
+
+```shell
+npx hardhat deploy-revive --contract Storage.sol --args --network ah
+```
