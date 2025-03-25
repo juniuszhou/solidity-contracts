@@ -1,14 +1,11 @@
-require("@nomicfoundation/hardhat-toolbox");
-require("@nomicfoundation/hardhat-ignition");
+import "@nomicfoundation/hardhat-toolbox"
+import "@nomicfoundation/hardhat-ignition"
 
-require("hardhat-resolc");
-require("dotenv").config();
+import "hardhat-resolc"
+import { config } from "dotenv"
+import "./tasks/compile-revive"
+config()
 
-require("./tasks/compile-revive");
-// require("./tasks/deploy-revive");
-require("./tasks/deploy.js");
-
-/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.19",
   networks: {

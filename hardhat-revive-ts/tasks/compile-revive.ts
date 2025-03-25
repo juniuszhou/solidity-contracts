@@ -1,15 +1,12 @@
-const { task } = require("hardhat/config");
-const { compile } = require("@parity/revive");
-const { readFileSync, writeFileSync, mkdirSync, existsSync } = require("fs");
-const { join } = require("path");
+import { task } from "hardhat/config"
+import { compile } from "@parity/revive"
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs'
+import { join } from 'path'
 
 task("compile-revive", "Compiles a contract using Revive")
   .addParam("contract", "The contract file to compile (e.g., Storage.sol)")
   .setAction(async (taskArgs) => {
     const { contract } = taskArgs;
-
-    console.log("========= ");
-
     // Read contract source
     const source = readFileSync(`contracts/${contract}`, "utf8");
 
@@ -34,15 +31,11 @@ task("compile-revive", "Compiles a contract using Revive")
           if (!existsSync(contractDir)) {
             mkdirSync(contractDir, { recursive: true });
           }
-
-          console.log("========= ");
           // Save ABI
           writeFileSync(
             join(contractDir, `${name}.json`),
             JSON.stringify(contract.abi, null, 2)
           );
-
-          console.log("========= ", join(contractDir, `${name}.polkavm`));
 
           // Save bytecode
           writeFileSync(

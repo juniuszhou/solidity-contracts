@@ -1,6 +1,8 @@
-const { task } = require("hardhat/config");
-const { readFileSync } = require("fs");
-const { join } = require("path");
+
+
+import { task } from "hardhat/config"
+import { readFileSync } from 'fs'
+import { join } from 'path'
 
 task("deploy-revive", "Deploys a contract")
   .addParam("contract", "The contract name")
