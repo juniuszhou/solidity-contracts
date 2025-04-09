@@ -10,7 +10,15 @@ import { task } from "hardhat/config";
 import "./tasks/hello"
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.28",
+  solidity: "0.8.28", // solidity version
+
+  paths: {
+    sources: "./contracts",      // Directory containing your Solidity contracts
+    artifacts: "./artifacts",    // Directory for compiled artifacts
+    cache: "./cache",           // Directory for cache files
+    tests: "./test",            // Directory for test files
+    root: "./",                 // Root directory of your project
+  },
 };
 
 export default config;
