@@ -1,18 +1,18 @@
 const hre = require("hardhat");
 
 async function main() {
-  // 获取合约工厂
-  const Storage = await hre.ethers.getContractFactory("Storage");
-  const initialValue = 42;
+   // 获取合约工厂
+   const Storage = await hre.ethers.getContractFactory("Storage");
+   const initialValue = 42;
 
-  // 部署合约
-  const storage = await Storage.deploy();
+   // 部署合约
+   const storage = await Storage.deploy(initialValue);
+ 
+   await storage.waitForDeployment();
 
-  await storage.waitForDeployment();
-
-  const contractAddress = await storage.getAddress();
-
-  console.log("Storage deployed to:", contractAddress);
+   const contractAddress = await storage.getAddress();
+ 
+   console.log("Storage deployed to:", contractAddress);
 
   // 设置一个新的号码
   const newNumber = 513; // 你希望设置的号码值
