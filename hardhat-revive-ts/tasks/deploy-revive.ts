@@ -32,9 +32,12 @@ task("deploy-revive", "Deploys a contract")
 
       // Log constructor args to verify
       const constructorArgs = taskArgs.args.split(",");
+      // const constructorArgs = []
       console.log("Constructor Arguments:", constructorArgs);
 
       const contract = await factory.deploy(...constructorArgs);
+      // const contract = await factory.deploy(...[]);
+
 
       await contract.waitForDeployment();
       console.log(`${contractName} deployed to:`, await contract.getAddress());
