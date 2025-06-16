@@ -21,7 +21,7 @@ task("deploy-revive", "Deploys a contract")
         )
       );
 
-      console.log("ABI:", abi);
+      // console.log("ABI:", abi);
       
       const bytecode = `0x${readFileSync(
         join("artifacts", "contracts", contractName, `${contractName}.polkavm`)
@@ -35,8 +35,8 @@ task("deploy-revive", "Deploys a contract")
       // const constructorArgs = []
       console.log("Constructor Arguments:", constructorArgs);
 
+      // const contract = await factory.deploy();
       const contract = await factory.deploy(...constructorArgs);
-      // const contract = await factory.deploy(...[]);
 
 
       await contract.waitForDeployment();

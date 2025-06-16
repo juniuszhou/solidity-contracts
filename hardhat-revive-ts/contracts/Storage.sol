@@ -2,16 +2,14 @@ pragma solidity ^0.8.19;
 
 contract Storage {
     string public number;
-    constructor(string memory num) {
-        number = num;
-    }
 
     /**
      * @dev Store value in variable
      * @param num value to store
      */
-    function store(string memory num) public {
+    function store(string memory num, string memory a) public {
         number = num;
+        number = a;
     }
 
     /**
