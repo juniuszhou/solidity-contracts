@@ -11,3 +11,8 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
+
+## config key
+
+npx hardhat vars set PRIVATE_KEY "0x"
+npx hardhat vars set SEPOLIA_PRIVATE_KEY "0x
