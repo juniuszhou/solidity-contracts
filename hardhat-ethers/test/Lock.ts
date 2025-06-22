@@ -17,6 +17,7 @@ describe("Lock", function () {
 
     const Lock = await hre.ethers.getContractFactory("Lock");
     lock = await Lock.deploy(unlockTime, {});
+    // lock.getEvent()
     console.log(await lock.getAddress())
 
   })
