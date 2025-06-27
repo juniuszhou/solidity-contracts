@@ -1,4 +1,4 @@
-import { HardhatUserConfig } from "hardhat/config"
+import { HardhatUserConfig, vars } from "hardhat/config"
 import "@nomicfoundation/hardhat-toolbox"
 import "@parity/hardhat-polkadot"
 
@@ -17,6 +17,11 @@ const config: HardhatUserConfig = {
                 adapterBinaryPath: "./bin/eth-rpc",
                 dev: true,
             },
+        },
+        passetHub: {
+            polkavm: true,
+            url: 'https://testnet-passet-hub-eth-rpc.polkadot.io',
+            accounts: [vars.get("PASSET_HUB_PRIVATE_KEY")],
         },
     },
 }
