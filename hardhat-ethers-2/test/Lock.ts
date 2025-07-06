@@ -1,14 +1,14 @@
-
+import {
+  time,
+  loadFixture,
+} from "@nomicfoundation/hardhat-toolbox/network-helpers";
 import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
-import { Lock } from "../typechain-types/Lock"
 import { expect } from "chai";
 import hre from "hardhat";
 import { Signer } from "ethers";
+import { Lock } from "../typechain-types/Lock"
 
 describe("Lock", function () {
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-
-  const unlockTime = ONE_YEAR_IN_SECS;
   let lock: Lock;
   let owner: Signer
 
@@ -20,16 +20,17 @@ describe("Lock", function () {
     // lock.getEvent()
     console.log(await lock.getAddress())
 
+    const a = BigInt(await lock.getNumber());
+    console.log(a)
+    expect(a).to.equal(1);
+
   })
 
   describe("Deployment", function () {
     it("Should set the right unlockTime", async function () {
-      const number = await lock.getNumber();
-      console.log(number)
-      expect(number).to.equal(1);
+      // const a = await lock.getNumber();
+      // console.log(a)
+      expect(0).to.equal(1);
     });
-
-
-
   });
 });

@@ -9,6 +9,7 @@ const config: HardhatUserConfig = {
 
   networks: {
     hardhat: {
+
     },
 
     sepolia: {
@@ -21,6 +22,7 @@ const config: HardhatUserConfig = {
       url: "http://127.0.0.1:8545",
       accounts: [vars.get("SUBSTRATE_LOCAL_PRIVATE_KEY") ?? "", vars.get("SUBSTRATE_LOCAL_PRIVATE_KEY2") ?? ""],
     },
+
   },
 };
 
