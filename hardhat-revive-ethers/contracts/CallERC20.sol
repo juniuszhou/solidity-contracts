@@ -42,3 +42,22 @@ contract CallERC20 {
         return supply;
     }
 }
+
+// different addres in hub
+
+contract CallERC20_HUB {
+    event TotalSupply(uint256 supply);
+
+    // Address of the ECRecover precompile
+    address constant EC_RECOVER_ADDRESS =
+        address(0x0000000700000000000000000000000001200000);
+    bytes public result;
+
+    function callECRecover() public {}
+
+    function getBalance() public view returns (uint256) {
+        IERC20 erc20 = IERC20(EC_RECOVER_ADDRESS);
+        uint256 supply = erc20.totalSupply();
+        return supply;
+    }
+}
