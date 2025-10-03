@@ -18,6 +18,11 @@ const config: HardhatUserConfig = {
       chainId: 11155111,
     },
 
+    polkavm: {
+      url: "http://127.0.0.1:8545",
+      accounts: [vars.get("SUBSTRATE_LOCAL_PRIVATE_KEY") ?? "", vars.get("SUBSTRATE_LOCAL_PRIVATE_KEY2") ?? ""],
+    },
+
   },
 };
 

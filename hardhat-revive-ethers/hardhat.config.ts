@@ -46,6 +46,13 @@ const config: HardhatUserConfig = {
                 vars.get("PASSET_HUB_PRIVATE_KEY2"),
             ],
         },
+        kusama: {
+            polkavm: true,
+            url: "https://kusama-asset-hub-eth-rpc.polkadot.io",
+            // blockscout-kusama-asset-hub.parity-chains-scw.parity.io
+            // https://kusama-asset-hub-rpc.polkadot.io/
+            chainId: 420420418
+        },
     },
 };
 
