@@ -5,6 +5,15 @@ const { ethers } = await network.connect();
 
 describe("Counter", function () {
   it("Should emit the Increment event when calling the inc() function", async function () {
+    const accounts = await ethers.getSigners();
+    console.log(accounts[0].address);
+    console.log(accounts[1].address);
+
+    const balance0 = await ethers.provider.getBalance(accounts[0].address);
+    const balance1 = await ethers.provider.getBalance(accounts[1].address);
+    console.log("balance0", balance0);
+    console.log("balance1", balance1);
+
     const counter = await ethers.deployContract("Counter");
 
     await expect(counter.inc()).to.emit(counter, "Increment").withArgs(1n);
