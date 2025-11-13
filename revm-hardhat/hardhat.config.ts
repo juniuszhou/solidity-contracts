@@ -37,8 +37,7 @@ export default defineConfig({
     local: {
       type: "http",
       chainType: "l1",
-      url: "http://127.0.0.1:8545",
-      accounts: [configVariable("SUBSTRATE_LOCAL_PRIVATE_KEY"), configVariable("SUBSTRATE_LOCAL_PRIVATE_KEY2")],
-    },
+      url: "http://127.0.0.1:8545"
+    }
   },
 });

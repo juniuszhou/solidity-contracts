@@ -55,3 +55,11 @@ After setting the variable, you can run the deployment with the Sepolia network:
 ```shell
 npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
 ```
+
+## test with gas report
+
+```bash
+nh test mocha --gas-stats
+nh test mocha --grep Counter
+nh test mocha --grep Precompile
+```

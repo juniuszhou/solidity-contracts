@@ -23,6 +23,7 @@ export function convertPublicKeyToSs58(publickey: Uint8Array) {
 async function main() {
     config()
     const url = "wss://westend-asset-hub-rpc.polkadot.io"
+    // const url = "https://services.polkadothub-rpc.com/testnet"
     const secret = process.env.SECRET
 
     const provider = getWsProvider(url);

@@ -10,3 +10,7 @@ npx hardhat --init
 npx hardhat keystore set SUBSTRATE_LOCAL_PRIVATE_KEY --dev
 
 ```
+
+## install again
+
+yarn add "hardhat@^3.0.13" "@nomicfoundation/hardhat-toolbox-mocha-ethers@^3.0.1" "@nomicfoundation/hardhat-ignition@^3.0.5" "@types/chai@^4.2.0" "@types/chai-as-promised@^8.0.1" "@types/mocha@>=10.0.10" "@types/node@^22.8.5" "chai@^5.1.2" "ethers@^6.14.0" "forge-std@foundry-rs/forge-std#v1.9.4" "mocha@^11.0.0" "typescript@~5.8.0"
