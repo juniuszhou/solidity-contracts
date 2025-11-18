@@ -63,3 +63,9 @@ nh test mocha --gas-stats
 nh test mocha --grep Counter
 nh test mocha --grep Precompile
 ```
+
+## test in local.
+
+```shell
+nh test mocha --grep Precompile --network local
+```

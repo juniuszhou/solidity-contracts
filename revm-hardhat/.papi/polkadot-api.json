@@ -11,6 +11,12 @@
       "wsUrl": "http://localhost:9944",
       "metadata": ".papi/metadata/hub2.scale",
       "genesis": "0x4545454545454545454545454545454545454545454545454545454545454545"
+    },
+    "devnet": {
+      "wsUrl": "http://localhost:9944",
+      "metadata": ".papi/metadata/devnet.scale",
+      "genesis": "0x5518956015a08759819d12f90fb3b6e167fcd7cbeba94ff0429db507dc175efc",
+      "codeHash": "0x3bdc8923037c863d53d4a58e15943f87ce342dfc65d99850c75c3cc036e3458e"
     }
   }
 }

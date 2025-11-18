@@ -1,0 +1,10 @@
+2025-11-18 16:58:25 🌐 Connecting to node at: ws://127.0.0.1:9944 ...    
+2025-11-18 16:58:35 🌟 Connected to node at: ws://127.0.0.1:9944    
+2025-11-18 16:58:35 💾 Using in-memory database, keeping only 256 blocks in memory    
+2025-11-18 16:58:35 Node does not have getAutomine RPC. Defaulting to automine=false. error: User(UserError { code: -32601, message: "Method not found", data: None })    
+2025-11-18 16:58:35 〽️ Prometheus exporter started at 127.0.0.1:9616    
+2025-11-18 16:58:35 Running JSON-RPC server: addr=0.0.0.0:8545,[::]:46065    
+2025-11-18 16:58:35 🔌 Subscribing to new blocks (BestBlocks)    
+2025-11-18 16:58:35 🔌 Subscribing to new blocks (FinalizedBlocks)    
+2025-11-18 16:59:43 The RPC connection was lost and we may have missed a few blocks (BestBlocks): Rpc(ClientError(DisconnectedWillReconnect("The connection was closed because of `\"The background task closed connection closed; restart required\"` and reconnect initiated")))    
+2025-11-18 16:59:43 The RPC connection was lost and we may have missed a few blocks (FinalizedBlocks): Rpc(ClientError(DisconnectedWillReconnect("The connection was closed because of `\"The background task closed connection closed; restart required\"` and reconnect initiated")))    
