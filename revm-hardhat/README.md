@@ -60,12 +60,12 @@ npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
 
 ```bash
 nh test mocha --gas-stats
-nh test mocha --grep Counter
-nh test mocha --grep Precompile
+nh test mocha test/basic/Counter.ts
+nh test mocha test/precompile/simple.ts
 ```
 
 ## test in local.
 
 ```shell
-nh test mocha --grep Precompile --network local
+nh test mocha test/precompile/simple.ts --network local
 ```
