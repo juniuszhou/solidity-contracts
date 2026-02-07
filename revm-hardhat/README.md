@@ -60,7 +60,7 @@ npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
 
 ```bash
 nh test mocha --gas-stats
-nh test mocha test/basic/Counter.ts
+nh test mocha test/basic/Counter.ts --network passetHub
 nh test mocha test/precompile/simple.ts
 ```
 

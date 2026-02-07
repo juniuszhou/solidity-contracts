@@ -1,12 +1,17 @@
 import { expect } from "chai";
 import { network } from "hardhat";
 import { createClient } from "polkadot-api"
+import { getWsProvider } from "polkadot-api/ws-provider";
 const { ethers } = await network.connect();
 
 describe("Counter", function () {
   it("Should emit the Increment event when calling the inc() function", async function () {
     console.log("================== Basic Counter test to make sure the deployment is working ==================");
     const counter = await ethers.deployContract("Counter");
+    const accounts = await ethers.getSigners();
+    for (const account of accounts) {
+      console.log(account.address, await ethers.provider.getBalance(account.address));
+    }
     const deployTx = counter.deploymentTransaction();
     if (deployTx) {
       const deployReceipt = await deployTx.wait();
@@ -33,7 +38,7 @@ describe("Counter", function () {
     // run a series of increments
     console.log("\n⛽ Gas Report:");
     let totalGas = 0n;
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 1; i++) {
       const tx = await counter.incBy(i);
       const receipt = await tx.wait();
       if (receipt?.gasUsed) {

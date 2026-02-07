@@ -34,6 +34,12 @@ export default defineConfig({
       url: configVariable("SEPOLIA_RPC_URL"),
       accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
     },
+    passetHub: {
+      type: "http",
+      chainType: "l1",
+      url: "https://testnet-passet-hub-eth-rpc.polkadot.io",
+      accounts: [configVariable("PASSET_HUB_PRIVATE_KEY"), configVariable("PASSET_HUB_PRIVATE_KEY2")],
+    },
     local: {
       type: "http",
       chainType: "l1",
