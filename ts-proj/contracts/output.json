@@ -1,0 +1,13 @@
+{
+  "llvm_arguments": [],
+  "optimizer_settings": {
+    "is_debug_logging_enabled": false,
+    "is_verify_each_enabled": false,
+    "level_back_end": "Aggressive",
+    "level_middle_end": "Default",
+    "level_middle_end_size": "Z"
+  },
+  "revive_version": "1.0.0+commit.f24e2d8.llvm-18.1.8",
+  "solc_metadata": "{\"compiler\":{\"version\":\"0.8.27+commit.40a35a09\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"by\",\"type\":\"uint256\"}],\"name\":\"Increment\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"inc\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"by\",\"type\":\"uint256\"}],\"name\":\"incBy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"x\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Counter.sol\":\"Counter\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"Counter.sol\":{\"keccak256\":\"0xc1adf3ebe4b4d2462cf7799b0e23735cdce10e7fad3a3c24c920cc44f748a53c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://76abbc4ccf77cd7ae84e8d572ae017353ebb31e14c3d26d6120b6e371e15e78e\",\"dweb:/ipfs/QmZWpeS9cpeDTqdE7s1sLHN7i97d1DUmB4phy65XHxKswy\"]}},\"version\":1}",
+  "solc_version": "0.8.27"
+}

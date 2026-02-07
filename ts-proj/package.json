@@ -1,0 +1,32 @@
+{
+  "name": "ts-proj",
+  "version": "1.0.0",
+  "description": "TypeScript project for deploying and interacting with Counter contract using ethers.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "compile": "ts-node src/get-bytecode.ts",
+    "deploy": "ts-node src/deploy.ts",
+    "interact": "ts-node src/interact.ts",
+    "shell-example": "ts-node src/shell-example.ts",
+    "start": "npm run build && node dist/index.js"
+  },
+  "keywords": [
+    "ethereum",
+    "ethers",
+    "typescript",
+    "solidity"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^6.15.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.5",
+    "solc": "^0.8.28",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.0"
+  }
+}
